@@ -1,20 +1,95 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      <div class="ion-text-center">Tensiunea arteriala</div>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="ion-text-center"><h2>Introducerea volorilor obtinute</h2></div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        <div class="ion-text-right">
+          Bratul drept
+          <ion-icon name="hand-right-outline"></ion-icon>
+        </div>
+      </ion-card-title>
+      <ion-card-subtitle>
+        <div class="ion-text-right">Prima masuratoare</div>
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col><div class="ion-text-center">Sistolica</div></ion-col>
+          <ion-col><div class="ion-text-center">Diastolica</div></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div class="ion-text-center">
+              <ion-item fill="solid">
+                <ion-label position="floating">Valoarea</ion-label>
+                <ion-input placeholder="0"></ion-input>
+              </ion-item>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="ion-text-center">
+              <ion-item fill="solid">
+                <ion-label position="floating">Valoarea</ion-label>
+                <ion-input placeholder="0"></ion-input>
+              </ion-item>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        <div class="ion-text-left">
+          <ion-icon name="hand-left-outline"></ion-icon>
+          Bratul stang
+        </div>
+      </ion-card-title>
+      <ion-card-subtitle>
+        <div class="ion-text-left">Prima masuratoare</div>
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col><div class="ion-text-center">Sistolica</div></ion-col>
+          <ion-col><div class="ion-text-center">Diastolica</div></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div class="ion-text-center">
+              <ion-item fill="solid">
+                <ion-label position="floating">Valoarea</ion-label>
+                <ion-input placeholder="0"></ion-input>
+              </ion-item>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="ion-text-center">
+              <ion-item fill="solid">
+                <ion-label position="floating">Valoarea</ion-label>
+                <ion-input placeholder="0"></ion-input>
+              </ion-item>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="ion-text-right"><ion-button>Salveaza</ion-button></div>
 </ion-content>
