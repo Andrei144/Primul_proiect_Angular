@@ -8,7 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  
+
+  // for displaying the number of checkings
+  first_or_second_check: string[]= ['Prima masuratoare', 'A doua masuratoare'];
+
   // blood preasure for left and right hand sistolical and diastolical values
   pr_r_sis: number;
   pr_r_dis: number;
@@ -19,11 +22,16 @@ export class HomePage {
   optimal_pr_sis=135;
   optimal_pr_dis=85;
 
+  // keeping track of how many times the user has entered exiding values
+  no_tries: number;
+
   constructor(private alertController: AlertController, public router: Router) {
     this.pr_r_sis=NaN;
     this.pr_r_dis=NaN;
     this.pr_l_sis=NaN;
     this.pr_l_dis=NaN;
+
+    this.no_tries=0;
   }
 
   AllValuesExisting(){
@@ -48,7 +56,13 @@ export class HomePage {
 
   SaveBloodPreasure(){
     if(this.pr_r_sis > this.optimal_pr_sis || this.pr_l_sis > this.optimal_pr_sis ||this.pr_r_dis > this.optimal_pr_dis || this.pr_l_dis > this.optimal_pr_dis){
-      this.ExcidingValues();
+      this.no_tries++;
+      
+      if(this.no_tries < 2){
+        this.ExcidingValues();
+      }else{
+        console.log('It should be made an alert for the case in wheach blood preassure is in fact too high.\n So that the user to not keep chacking the same thing.');
+      }
     }else{
       this.RedirectToConratulationPage();
     }
